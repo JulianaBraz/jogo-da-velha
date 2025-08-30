@@ -26,3 +26,44 @@ Como Começar
     5. Envie um pull request para revisão.
 
 
+
+Algumas contribuições junto a base do jogo:
+ # 🎮 Jogo da Velha (Tic Tac Toe)
+
+Um simples **Jogo da Velha** feito com **HTML, CSS e JavaScript puro**, totalmente responsivo e estilizado com animações.  
+Ideal para estudos, diversão e como projeto inicial de front-end.  
+
+---
+
+## 🚀 Funcionalidades
+
+✅ Dois jogadores (X e O)  
+✅ Detecção automática de **vitória** ou **empate**  
+✅ Destaque animado na linha vencedora  
+✅ Botão de **reiniciar jogo**  
+✅ Layout com **cores e animações modernas**  
+✅ Código organizado em arquivos separados (`index.html`, `style.css`, `script.js`)  
+
+---
+
+## 📂 Estrutura do Projeto
+
+📁 jogo-da-velha
+┣ 📄 index.html
+┣ 📄 style.css
+┣ 📄 script.js
+┣ 📄 logo.png (opcional)
+┗ 📄 README.md
+
+---
+
+🔧 Melhorias Futuras que eu gostaria de adicionar:
+
+  1. Adicionar placar de vitórias
+  2. Implementar modo contra CPU (com IA simples)
+  3. Tornar totalmente responsivo para celular
+  4. Adicionar animações extras no empate
+
+---
+
+
