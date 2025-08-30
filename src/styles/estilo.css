@@ -1,153 +1,120 @@
 body {
     overflow: hidden;
-    font-family: Consolas,monaco,monospace; 
-    background: linear-gradient(to right, #D1347B 30%, #093573 95%); /* Adiciona um gradiente de cor */
+    font-family: Consolas, monaco, monospace;
+    background: linear-gradient(to right, #D1347B 30%, #093573 95%);
+    margin: 0;
+    padding: 0;
 }
 
-.navbar{
+.navbar {
     display: flex;
     justify-content: center;
-    justify-items: center;
-    background-color: rgba(9, 53, 115, 0.5);
+    background-color: rgba(127, 0, 255, 0.5);
+    padding: 10px;
 }
 
-.icon-logo-img, img{
-    margin-top: 1%;
-    margin-bottom: 1%;
-    margin-left: 1%;
+.icon-logo-img {
+    margin: 1%;
     display: inline-block;
-   
 }
 
-.container1-quadrado {
+.container-pai {
     display: flex;
-    width: 100px; 
-    height: 100px;
-    margin-bottom: 45px;
-    margin-top: 5%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5%;
 }
 
-.container2-quadrado {
-    display: flex;
-    width: 100px; 
-    height: 100px;
-    margin-bottom: 45px;
+.container-info-jogadores {
+    display: inline-block;
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    list-style-type: none;
+    margin: 20px 0;
+    width: 220px;
+    text-align: center;
 }
 
-.container3-quadrado {
-    display: flex;
-    width: 100px; 
-    height: 100px;
-    margin-bottom: 3%;
+.jogador1,
+.jogador2,
+.vencedor {
+    color: white;
+    font-size: 20px;
+    margin: 10px 0;
 }
 
-.container{
-   display: inline-block;
-   padding: 10px;   
+.vencedor {
+    font-size: 26px;
+    color: #FFD700;
+    font-weight: bold;
+    animation: vencedorAnim 1s ease-in-out;
+}
+
+@keyframes vencedorAnim {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 10px;
 }
 
 .quadrado {
-    justify-content: center;
-    align-items: flex-start; 
-    width: 100px;
-    height: 100px;
-    background-color: rgba(9, 53, 115, 0.5);
-    display: inline-block;
-    padding: 70px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(205, 155, 252, 1.0);
     font-size: 60px;
-    margin: 5px;
+    font-weight: bold;
     cursor: pointer;
-    color: rgba(9, 53, 115, 0.0);
-    flex-wrap: wrap;
+    color: rgba(0, 0, 0, 0); /* começa invisível */
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.container-pai{
-    display: flex-end;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: -7%;
+.quadrado:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.container-jogadores {
-    order: 1;
-    display: flex;
-    margin-top: -8%;
-    justify-content: flex-end; 
-    align-items: center;
-    margin-right: 10%;
+.quadrado:active {
+    transform: scale(0.95);
 }
 
-.container-info-jogadores{
-    order: 2;
-    display: inline-block;
-    
-    padding: 50px;
-    border: 1px solid white;
-    border-radius: 2%;
-    list-style-type: none;
-
-    margin-left: 65%;
-    margin-right: auto;
-    width: 20%;
-
-    margin-top: -8%;
-    
-}
-
-
-.jogador1, 
-.jogador2, 
-.vencedor{
-    color: white;
+.reset {
+    background-color: rgba(255, 215, 0, 0.8);
     font-size: 20px;
-    display: flex;
-}
-
-
-button{
-    background-color: transparent;
-    font-size: 20px;
-    margin-top: 5%;
-    width: 100px;
-    height: 30px;
+    margin-top: 20px;
+    width: 140px;
+    height: 45px;
     cursor: pointer;
     color: white;
-    border: 1px solid white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.button-class{
-    border-radius: 10%;
+.reset:hover {
+    background-color: rgba(255, 165, 0, 1);
+    transform: translateY(-5px);
 }
 
-
-
-.jogador{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: -20%;
-    padding: 10px;
-    margin-right: 80px;
-    margin-left: 80px;
-    margin-bottom: 15%;
+.reset:active {
+    transform: translateY(2px);
 }
 
-.jogador-icon {
-    width: 150px;
-    height: 150px;
+.vitoria {
+    animation: vitoriaAnim 0.5s ease-in-out infinite;
 }
 
-p{
-    margin-top: 30px;
-}
-
-.tituloTxt{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: rgb(255, 255, 245);
+@keyframes vitoriaAnim {
+    0% { background-color: rgba(255, 215, 0, 0.8); transform: scale(1.2); }
+    50% { background-color: rgba(255, 0, 0, 0.6); transform: scale(1); }
+    100% { background-color: rgba(255, 215, 0, 0.8); transform: scale(1.2); }
 }
 
